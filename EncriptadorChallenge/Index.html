@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador de Texto</title>
+  <!-- Vincula tu archivo CSS -->
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <header>
+    <img src="assets/Logo-2.png" alt="Logo" class="logo">
+    <h1>Encriptador De Texto</h1>
+  </header>
+  <main>
+    <section>
+      <label for="inputTexto">Texto A Encriptar/Desencriptar:</label>
+      <textarea id="inputTexto" rows="4" cols="50"></textarea>
+      <button id="btnEncriptar">Encriptar</button>
+      <button id="btnDesencriptar">Desencriptar</button>
+    </section>
+    <section>
+      <label for="outputTexto">Resultado:</label>
+      <textarea id="outputTexto" rows="4" cols="50" readonly></textarea>
+    </section>
+    <section>
+      <button id="btnCopiar">Copiar Al Portapapeles</button>
+    </section>
+  </main>
+
+ <script>
+    document.getElementById('btnEncriptar').addEventListener('click', function() {
+      let texto = document.getElementById('inputTexto').value;
+
+      if (!validarTexto(texto)) {
+        alert("El texto solo debe contener números, letras minúsculas y no debe tener acentos ni caracteres especiales.");
+        return;
+      }
+
+      let textoEncriptado = encriptar(texto);
+      document.getElementById('outputTexto').value = textoEncriptado;
+    });
+
+    document.getElementById('btnDesencriptar').addEventListener('click', function() {
+      let texto = document.getElementById('inputTexto').value;
+
+      if (!validarTexto(texto)) {
+        alert("El texto solo debe contener letras minúsculas y no debe tener acentos ni caracteres especiales.");
+        return;
+      }
+
+      let textoDesencriptado = desencriptar(texto);
+      document.getElementById('outputTexto').value = textoDesencriptado;
+    });
+
+    function validarTexto(texto) {
+      // Expresión regular para verificar que solo haya letras minúsculas sin acentos ni caracteres especiales
+      let regex = /^[a-z]+$/;
+      return regex.test(texto);
+    }
+
+    function encriptar(texto) {
+      return texto.replace(/e/g, 'enter')
+                  .replace(/i/g, 'imes')
+                  .replace(/a/g, 'ai')
+                  .replace(/o/g, 'ober')
+                  .replace(/u/g, 'ufat');
+    }
+
+    function desencriptar(texto) {
+      return texto.replace(/enter/g, 'e')
+                  .replace(/imes/g, 'i')
+                  .replace(/ai/g, 'a')
+                  .replace(/ober/g, 'o')
+                  .replace(/ufat/g, 'u');
+    }
+  </script>
+</body>
+<footer>
+  <div class="footer-content">
+    <p>Desarrollado por <strong>Anderson Nonato</strong></p>
+    <p>Contacto: <a href="Mail:andnotsee@gmail.com">andnotsee@gmail.com</a></p>
+  </div>
+</footer>
+</html>

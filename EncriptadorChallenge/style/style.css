@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --color-primaria: #000000;
+    --color-secundaria: #F6F6F6;
+    --color-terciaria: #22D4FD;
+    --color-hover: #272727;
+
+    --fuente-krona: 'Krona One', sans-serif;
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-primaria);
+    color: var(--color-secundaria);
+    font-family: var(--fuente-montserrat);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header img.logo {
+    position: absolute;
+    top: -120px; /* Ajusta este valor para mover el logo hacia arriba o hacia abajo */
+    left: 600px; /* Ajusta este valor para mover el logo a la izquierda o derecha */
+    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+}
+
+header h1 {
+    font-family: var(--fuente-krona);
+    font-size: 2.5rem;
+    color: var(--color-terciaria);
+}
+
+main {
+    width: 80%;
+    max-width: 600px;
+    background-color: var(--color-hover);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    resize: none;
+}
+
+textarea[readonly] {
+    background-color: var(--color-secundaria);
+    color: var(--color-primaria);
+}
+
+button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-family: var(--fuente-montserrat);
+    color: var(--color-secundaria);
+    background-color: var(--color-terciaria);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: capitalize;
+}
+
+button:hover {
+    background-color: var(--color-hover);
+}
+
+footer {
+  background-color: var(--color-terciaria);
+  color: var(--color-secundaria);
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-content strong {
+  color: #000000; /* Cambia el color del nombre a negro */
+}
+
+.footer-content a {
+  color: var(--color-secundaria);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-secundaria);
+}
+
+.footer-content a:hover {
+  border-bottom-style: solid;
+}
+
